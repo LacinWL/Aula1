@@ -4,7 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        div{
+            position: absolute;
+            margin-left: 80dvh;
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
+    <div>
+        <h1>Mudar Cor Do Fundo</h1>
+        <p>1. para VERDE</p>
+        <p>2. para VERMELHO</p>
+        <p>3. para AZUL</p>
+        <p>4. para AMARELO</p>
+        <p>5. para a COR ESCOLHIDA</p> <input type="color" id="InputColor">
+        <br><br>
+        <input type="number" id="numero">
+        <br><br>
+        <button id="btnMudar">Mudar</button>
+        <br>
+        <p id="erro"></p>
+    </div>
+
+
+    <script>
+        document.getElementById('btnMudar').addEventListener('click', () => {
+            const Cor = document.getElementById('InputColor').value;
+            const numero = document.getElementById('numero').value;
+            const erro = document.getElementById('erro');
+
+            if(numero == 1){
+                document.body.style.backgroundColor = "green"
+            }
+            else if(numero == 2){
+                document.body.style.backgroundColor = "red"
+            }
+            else if(numero == 3){
+                document.body.style.backgroundColor = "blue"
+            }
+            else if(numero == 4){
+                document.body.style.backgroundColor = "yellow"
+            }
+            else if(numero == 5){
+                document.body.style.backgroundColor = Cor;
+            }
+            else{
+                document.body.style = "none"
+                erro.innerHTML = "Número Inválido..."
+            }
+        })
+    </script>
 </body>
 </html>
